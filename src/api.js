@@ -1,8 +1,3 @@
-console.log("hey");
-
-import { createUI } from "./design";
-// import { getWeather } from "./api";
-
 export async function getWeather(city) {
   const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
   const options = {
@@ -13,7 +8,7 @@ export async function getWeather(city) {
     },
   };
 
-  const cloud_pct = document.querySelector("#cloud-pc");
+  const cloud_pct = document.querySelector("#cloud-pct");
   const feels_like = document.querySelector("#feels-like");
   const humidity = document.querySelector("#humidity");
   const max_temp = document.querySelector("#max-temp");
@@ -45,23 +40,3 @@ export async function getWeather(city) {
     console.error(error);
   }
 }
-
-createUI();
-
-function getCityWeather() {
-  const cityInput = document.querySelector("#city-input");
-  const city = cityInput.value;
-
-  // const city = "Mumbai"; // Set the city here
-  getWeather(city);
-  cityInput.value = "";
-
-  const startDisp = document.querySelector(".start-display");
-  startDisp.classList.add("hidden");
-  const weatherDisp = document.querySelector(".weather-display");
-  weatherDisp.classList.remove("hidden");
-}
-
-const searchButton = document.querySelector(".search-button");
-
-searchButton.addEventListener("click", getCityWeather); // Remove parentheses here
