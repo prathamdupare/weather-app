@@ -29,18 +29,65 @@ export async function getWeather(city) {
     const result = await response.json();
 
     console.log(result);
-    console.log(result.cloud_pct); // Check if cloud_pc element is correctly selected
+    console.log(result.cloud_pct);
 
-    cloud_pct.innerHTML = `Cloud pct: ${result.cloud_pct}`;
-    feels_like.innerHTML = `Feels Like: ${result.feels_like}`;
-    humidity.innerHTML = `Humidity: ${result.humidity}`;
-    max_temp.innerHTML = `Max Temperature: ${result.max_temp}`;
-    min_temp.innerHTML = `Min Temperature: ${result.min_temp}`;
-    sunrise.innerHTML = `Sunrise: ${result.sunrise}`;
-    sunset.innerHTML = `Sunset: ${result.sunset}`;
-    temp.innerHTML = `Temperature: ${result.temp}`;
-    wind_degrees.innerHTML = `Wind Degrees: ${result.wind_degrees}`;
-    wind_speed.innerHTML = `Wind Speed: ${result.wind_speed}`;
+    const tempText = document.createTextNode(`Temperature: ${result.temp}`);
+    temp.appendChild(tempText);
+
+    const cloudPctText = document.createTextNode(
+      `Cloud pct: ${result.cloud_pct}`
+    );
+    cloud_pct.appendChild(cloudPctText);
+
+    const feelsLikeText = document.createTextNode(
+      `Feels Like: ${result.feels_like}`
+    );
+    feels_like.appendChild(feelsLikeText);
+
+    const humidityText = document.createTextNode(
+      `Humidity: ${result.humidity}`
+    );
+    humidity.appendChild(humidityText);
+
+    const maxTempText = document.createTextNode(
+      `Max Temperature: ${result.max_temp}`
+    );
+    max_temp.appendChild(maxTempText);
+
+    const minTempText = document.createTextNode(
+      `Min Temperature: ${result.min_temp}`
+    );
+    min_temp.appendChild(minTempText);
+
+    // Convert the timestamps to JavaScript Date objects
+    const sunriseTimestamp = `${result.sunrise}` * 1000; // Convert to milliseconds
+    const sunsetTimestamp = `${result.sunset}` * 1000; // Convert to milliseconds
+
+    const sunriseDate = new Date(sunriseTimestamp);
+    const sunsetDate = new Date(sunsetTimestamp);
+
+    // Format the date and time as a string
+    const sunriseString = sunriseDate.toLocaleTimeString();
+    const sunsetString = sunsetDate.toLocaleTimeString();
+
+    console.log("Sunrise:", sunriseString);
+    console.log("Sunset:", sunsetString);
+
+    const sunriseText = document.createTextNode(`Sunrise: ${sunriseString}`);
+    sunrise.appendChild(sunriseText);
+
+    const sunsetText = document.createTextNode(`Sunset: ${sunsetString}`);
+    sunset.appendChild(sunsetText);
+
+    const windDegreesText = document.createTextNode(
+      `Wind Degrees: ${result.wind_degrees}`
+    );
+    wind_degrees.appendChild(windDegreesText);
+
+    const windSpeedText = document.createTextNode(
+      `Wind Speed: ${result.wind_speed}`
+    );
+    wind_speed.appendChild(windSpeedText);
   } catch (error) {
     console.error(error);
   }
