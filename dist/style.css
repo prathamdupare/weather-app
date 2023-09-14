@@ -63,6 +63,7 @@ ul {
   font-size: 16px;
 }
 
+/* Normal state styles */
 .weather-search button {
   padding: 10px 20px;
   background-color: #007bff;
@@ -72,12 +73,21 @@ ul {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition for background-color */
+}
+
+/* Hover state styles */
+.weather-search button:hover {
+  background-color: #0056b3; /* Change the background color on hover */
+}
+
+/* Active/Pressed state styles */
+.weather-search button:active {
+  background-color: #003c80; /* Change the background color when the button is pressed */
 }
 
 .weather-display {
   border-top: solid rgb(218, 216, 216) 0.05px;
-  /* display: flex;
-    flex-direction: column; */
   margin-top: 20px;
   border-radius: 7px;
   padding-left: 0px;
@@ -125,7 +135,7 @@ ul {
 }
 
 .city-name {
-  background-color: #fff4fc;
+  background-color: #fff4f8;
   padding: 10px;
   border-radius: 10px;
   border: 0.25px solid rgb(233, 230, 230);
