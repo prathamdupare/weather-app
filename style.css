@@ -75,6 +75,8 @@ ul {
 }
 
 .weather-properties {
+    /* display: flex;
+    justify-content: space-around; */
     background-color: rgb(243, 241, 241);
     margin: 5px;
     border-radius: 5px;
@@ -101,4 +103,8 @@ ul {
 .front-image {
     width: 100%; /* Set the image width to 100% of its container's width */
   height: auto;
+}
+
+.fa {
+    padding: 0 20px; /* 0 for top and bottom, 20px for left and right */
 }
