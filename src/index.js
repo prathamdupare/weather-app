@@ -4,6 +4,8 @@ import { createUI } from "./design";
 // import { getWeather } from "./api";
 
 export async function getWeather(city) {
+  const loadingSpinner = document.querySelector(".loading-spinner");
+
   const url = `https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=${city}`;
   const options = {
     method: "GET",
@@ -27,6 +29,8 @@ export async function getWeather(city) {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
+
+    loadingSpinner.style.display = "none";
 
     console.log(result);
     console.log(result.cloud_pct);
@@ -90,12 +94,17 @@ export async function getWeather(city) {
     wind_speed.appendChild(windSpeedText);
   } catch (error) {
     console.error(error);
+    console.log("kjdsfnldaskjn");
+
+    loadingSpinner.style.display = "none";
   }
 }
 
 createUI();
 
 function getCityWeather() {
+  const loadingSpinner = document.querySelector(".loading-spinner");
+
   const weatherProperties = document.querySelectorAll(".weather-properties");
   weatherProperties.forEach((element) => {
     removeAllTextNodes(element);
@@ -104,8 +113,13 @@ function getCityWeather() {
   const cityInput = document.querySelector("#city-input");
   const city = cityInput.value;
 
+  const cityName = document.querySelector(".city-name");
+
+  loadingSpinner.style.display = "block";
+
   // const city = "Mumbai"; // Set the city here
   getWeather(city);
+  cityName.innerHTML = `City : ${city}`;
   cityInput.value = "";
 
   const startDisp = document.querySelector(".start-display");

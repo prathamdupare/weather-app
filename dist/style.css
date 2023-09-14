@@ -1,110 +1,138 @@
-
 /* CSS styles can be embedded here */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F2F5F7;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f5f7;
+  margin: 0;
+  padding: 0;
 }
 
-
 ul {
-    list-style: none;
+  list-style: none;
+}
+
+/* CSS for the loading spinner */
+.loading-spinner {
+  background-color: white;
+  border: 4px solid rgba(0, 0, 0, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin: 20px auto;
+  display: none; /* Initially hide the spinner */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .weather-app {
-    max-width: 400px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .weather-header {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .weather-header h1 {
-    font-size: 24px;
-    color: #333;
+  font-size: 24px;
+  color: #333;
 }
 
 .weather-content {
-    text-align: center;
+  text-align: center;
 }
 
 .weather-search input[type="text"] {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 .weather-search button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    margin: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .weather-display {
-    border-top: solid rgb(218, 216, 216) 0.05px;
-    /* display: flex;
+  border-top: solid rgb(218, 216, 216) 0.05px;
+  /* display: flex;
     flex-direction: column; */
-    margin-top: 20px;
-    padding-left: 0px;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+  padding-left: 0px;
+  padding: 20px;
+  background-color: rgb(255, 255, 255);
 }
 
 .weather-display h2 {
-    font-size: 20px;
-    color: #333;
+  font-size: 20px;
+  color: #333;
 }
 
 .weather-display p {
-    font-size: 16px;
-    color: #555;
+  font-size: 16px;
+  color: #555;
 }
 
 .weather-properties {
-    /* display: flex;
+  /* display: flex;
     justify-content: space-around; */
-    background-color: rgb(243, 241, 241);
-    margin: 5px;
-    border-radius: 5px;
-    padding: 10px;
+  background-color: rgb(243, 241, 241);
+  margin: 5px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 #weather-icon {
-    width: 50px;
-    height: 50px;
-    margin: 10px auto;
-    display: block;
+  width: 50px;
+  height: 50px;
+  margin: 10px auto;
+  display: block;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .start-display {
-    width: 100%;
-    /* background-color: rgb(168, 168, 168); */
-    height: 520px;
+  width: 100%;
+  /* background-color: rgb(168, 168, 168); */
+  height: 520px;
+}
+
+.city-name {
+  background-color: #ffe0f2;
+  padding: 10px;
+  border-radius: 10px;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .front-image {
-    width: 100%; /* Set the image width to 100% of its container's width */
+  width: 100%; /* Set the image width to 100% of its container's width */
   height: auto;
 }
 
 .fa {
-    padding: 0 20px; /* 0 for top and bottom, 20px for left and right */
+  padding: 0 20px; /* 0 for top and bottom, 20px for left and right */
+  color: #4b0f27;
 }

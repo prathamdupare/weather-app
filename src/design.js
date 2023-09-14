@@ -27,6 +27,11 @@ export function createUI() {
   weatherSearch.appendChild(cityInput);
   weatherSearch.appendChild(searchButton);
 
+  const cityName = document.createElement("div");
+  cityName.textContent = "Enter City Name Above";
+  cityName.classList.add("city-name");
+  weatherSearch.appendChild(cityName);
+
   // Create the weather display elements
   const weatherDisplay = document.createElement("ul");
   weatherDisplay.classList.add("weather-display");
@@ -114,6 +119,10 @@ export function createUI() {
   windSpeedIcon.classList.add("fa", "fa-camera-retro");
   wind_speed.appendChild(windSpeedIcon);
 
+  const loadingSpinner = document.createElement("div");
+  loadingSpinner.classList.add("loading-spinner");
+
+  weatherDisplay.appendChild(loadingSpinner);
   weatherDisplay.appendChild(temp);
   weatherDisplay.appendChild(feels_like);
   weatherDisplay.appendChild(cloud_pc);
