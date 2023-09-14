@@ -79,9 +79,10 @@ ul {
   /* display: flex;
     flex-direction: column; */
   margin-top: 20px;
+  border-radius: 7px;
   padding-left: 0px;
   padding: 20px;
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
 }
 
 .weather-display h2 {
@@ -97,10 +98,13 @@ ul {
 .weather-properties {
   /* display: flex;
     justify-content: space-around; */
-  background-color: rgb(243, 241, 241);
+  background-color: rgb(255, 255, 255);
   margin: 5px;
   border-radius: 5px;
+  border: 0.25px solid rgb(233, 230, 230);
+  margin: 10px;
   padding: 10px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 #weather-icon {
@@ -121,9 +125,11 @@ ul {
 }
 
 .city-name {
-  background-color: #ffe0f2;
+  background-color: #fff4fc;
   padding: 10px;
   border-radius: 10px;
+  border: 0.25px solid rgb(233, 230, 230);
+  margin: 10px;
   transition: opacity 0.5s ease-in-out;
 }
 
