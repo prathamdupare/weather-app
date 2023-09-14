@@ -96,6 +96,11 @@ export async function getWeather(city) {
 createUI();
 
 function getCityWeather() {
+  const weatherProperties = document.querySelectorAll(".weather-properties");
+  weatherProperties.forEach((element) => {
+    removeAllTextNodes(element);
+  });
+
   const cityInput = document.querySelector("#city-input");
   const city = cityInput.value;
 
@@ -109,6 +114,16 @@ function getCityWeather() {
   weatherDisp.classList.remove("hidden");
 }
 
-const searchButton = document.querySelector(".search-button");
+function removeAllTextNodes(element) {
+  for (let i = element.childNodes.length - 1; i >= 0; i--) {
+    const childNode = element.childNodes[i];
+    if (childNode.nodeType === Node.TEXT_NODE) {
+      // Check if the child node is a text node
+      element.removeChild(childNode);
+    }
+  }
+}
 
+// removeAllTextNodes(myElement);
+const searchButton = document.querySelector(".search-button");
 searchButton.addEventListener("click", getCityWeather); // Remove parentheses here

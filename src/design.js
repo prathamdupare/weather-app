@@ -5,7 +5,7 @@ export function createUI() {
   const weatherHeader = document.createElement("div");
   weatherHeader.classList.add("weather-header");
   const headerTitle = document.createElement("h1");
-  headerTitle.textContent = "Weather App";
+  headerTitle.textContent = "WeatherMate";
   weatherHeader.appendChild(headerTitle);
 
   // Create the content container
