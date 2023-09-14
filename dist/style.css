@@ -33,7 +33,7 @@ ul {
 }
 
 .weather-app {
-  max-width: 400px;
+  max-width: 900px;
   margin: 50px auto;
   background-color: #fff;
   padding: 20px;
@@ -134,11 +134,20 @@ ul {
 }
 
 .front-image {
-  width: 100%; /* Set the image width to 100% of its container's width */
-  height: auto;
+  /* Set the image width to 100% of its container's width */
+  height: 100%;
+  width: auto;
 }
 
 .fa {
   padding: 0 20px; /* 0 for top and bottom, 20px for left and right */
   color: #4b0f27;
+}
+
+@media (max-width: 499px) {
+  .front-image {
+    /* Set the image width to 100% of its container's width */
+    width: 100%;
+    height: auto;
+  }
 }
