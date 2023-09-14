@@ -45,6 +45,7 @@ export function createUI() {
   const imageElement = document.createElement("img");
 
   imageElement.src = "/img/Front.jpg";
+
   imageElement.classList.add("front-image");
   startDisplay.appendChild(imageElement);
   document.body.appendChild(startDisplay);
